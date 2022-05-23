@@ -69,12 +69,15 @@ export default function SearchBar(props: any) {
         const query = values.query.trim();
         const isYoutube = query.startsWith('!yt');
         const isTorrent = query.startsWith('!t');
+        const isPornhub = query.startsWith('!ph');
         form.setValues({ query: '' });
         setTimeout(() => {
           if (isYoutube) {
             window.open(`https://www.youtube.com/results?search_query=${query.substring(3)}`);
           } else if (isTorrent) {
             window.open(`https://bitsearch.to/search?q=${query.substring(3)}`);
+          } else if (isPornhub) {
+            window.open(`https://de.pornhub.com/video/search?search=${query.substring(3)}`);
           } else {
             window.open(`${queryUrl}${values.query}`);
           }
@@ -102,15 +105,15 @@ export default function SearchBar(props: any) {
             radius="md"
             size="md"
             styles={{ rightSection: { pointerEvents: 'none' } }}
-            placeholder="Search the web..."
+            placeholder="Internet durchsuchen..."
             {...props}
             {...form.getInputProps('query')}
           />
         }
       >
         <Text>
-          tip: Use the prefixes <b>!yt</b> and <b>!t</b> in front of your query to search on YouTube
-          or for a Torrent respectively.
+          tip: Use the prefixes <b>!yt</b> and <b>!t</b>  in front of your query to search on YouTube
+          or for a Torrent respectively. <b>!ph</b> for Pornhub
         </Text>
       </Popover>
     </form>
