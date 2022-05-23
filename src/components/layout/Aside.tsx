@@ -1,5 +1,5 @@
 import { Aside as MantineAside, Group } from '@mantine/core';
-import { WeatherModule, DateModule, CalendarModule } from '../modules';
+import { WeatherModule, DateModule, CalendarModule, SystemModule } from '../modules';
 import { ModuleWrapper } from '../modules/moduleWrapper';
 
 export default function Aside(props: any) {
@@ -18,6 +18,7 @@ export default function Aside(props: any) {
         <ModuleWrapper module={CalendarModule} />
         <ModuleWrapper module={DateModule} />
         <ModuleWrapper module={WeatherModule} />
+        <ModuleWrapper module={SystemModule} />
       </Group>
     </MantineAside>
   );
