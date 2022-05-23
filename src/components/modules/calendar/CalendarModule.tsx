@@ -30,7 +30,7 @@ export default function CalendarComponent(props: any) {
     // Get the url and apiKey for all Sonarr and Radarr services
     const sonarrService = filtered.filter((service) => service.type === 'Sonarr').at(0);
     const radarrService = filtered.filter((service) => service.type === 'Radarr').at(0);
-    var options = { weekday: 'long', month: 'long', day: 'numeric' };
+    const options = { weekday: 'long', month: 'long', day: 'numeric' };
     const nextMonth = new Date(new Date().setMonth(new Date().getMonth() + 2)).toLocaleDateString('de-DE', options);
     if (sonarrService && sonarrService.apiKey) {
       fetch(
